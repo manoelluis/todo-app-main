@@ -12,6 +12,13 @@
       href="./images/favicon-32x32.png"
     />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="estilo.css" />
 
     <title>Processo Cross Commerce</title>
@@ -55,8 +62,38 @@
               <span class="texto">Texto</span>
             </label>
           </li>
+          <li>
+            <label for="" class="tarefa">
+              <input type="checkbox" name="fazerTarefa" id="" />
+              <span class="checkmark"></span>
+              <span class="texto">Texto 2</span>
+            </label>
+          </li>
+          <li>
+            <label for="" class="tarefa">
+              <input type="checkbox" name="fazerTarefa" id="" />
+              <span class="checkmark"></span>
+              <span class="texto">Texto 3</span>
+            </label>
+          </li>
         </ul>
       </section>
+      <div class="itens_baixo flex_row">
+        <div class="tarefas_restantes"><span>2</span> Tarefas Restantes</div>
+        <div class="filtro flex_row"></div>
+        <label>
+          <input type="radio" name="filtro" id="todos" />
+          <span>Todos</span>
+        </label>
+        <label>
+          <input type="radio" name="filtro" id="ativos" />
+          <span>Ativos</span>
+        </label>
+        <label>
+          <input type="radio" name="filtro" id="finalizados" />
+          <span>Finalizados</span>
+        </label>
+      </div>
     </main>
 
     <footer>
