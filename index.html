@@ -22,20 +22,9 @@
     <link rel="stylesheet" href="estilo.css" />
 
     <title>Processo Cross Commerce</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
   </head>
   <body class="dark_mode">
-    <header>
+    <header class="flex_row">
       <h1>Tarefas</h1>
       <div class="bloco_tema">
         <input type="checkbox" name="tema" id="tema" />
@@ -44,7 +33,7 @@
     </header>
 
     <main>
-      <div class="add_nova_tarefa">
+      <div class="add_nova_tarefa flex_row">
         <span></span>
         <input
           type="text"
@@ -53,60 +42,53 @@
           id="addTarefa"
         />
       </div>
-      <section>
+      <section class="conteudo">
         <ul>
-          <li>
-            <label for="" class="tarefa">
+          <li class="flex_row">
+            <label class="tarefa">
               <input type="checkbox" name="fazerTarefa" id="" checked />
               <span class="checkmark"></span>
               <span class="texto">Texto</span>
             </label>
+            <span class="remove"></span>
           </li>
-          <li>
-            <label for="" class="tarefa">
-              <input type="checkbox" name="fazerTarefa" id="" />
+          <li class="flex_row">
+            <label class="tarefa">
+              <input type="checkbox" name="fazerTarefa2" id="" />
               <span class="checkmark"></span>
               <span class="texto">Texto 2</span>
             </label>
+            <span class="remove"></span>
           </li>
-          <li>
-            <label for="" class="tarefa">
-              <input type="checkbox" name="fazerTarefa" id="" />
+          <li class="flex_row">
+            <label class="tarefa">
+              <input type="checkbox" name="fazerTarefa3" id="" />
               <span class="checkmark"></span>
               <span class="texto">Texto 3</span>
             </label>
+            <span class="remove"></span>
           </li>
         </ul>
       </section>
       <div class="itens_baixo flex_row">
         <div class="tarefas_restantes"><span>2</span> Tarefas Restantes</div>
-        <div class="filtro flex_row"></div>
-        <label>
-          <input type="radio" name="filtro" id="todos" />
-          <span>Todos</span>
-        </label>
-        <label>
-          <input type="radio" name="filtro" id="ativos" />
-          <span>Ativos</span>
-        </label>
-        <label>
-          <input type="radio" name="filtro" id="finalizados" />
-          <span>Finalizados</span>
-        </label>
+        <div class="filtro flex_row">
+          <label>
+            <input type="radio" name="filtro" id="todos" />
+            <span>Todos</span>
+          </label>
+          <label>
+            <input type="radio" name="filtro" id="ativos" />
+            <span>Ativos</span>
+          </label>
+          <label>
+            <input type="radio" name="filtro" id="finalizados" />
+            <span>Finalizados</span>
+          </label>
+        </div>
+        <span class="limpar">Limpar finalizados</span>
       </div>
     </main>
-
-    <footer>
-      <div class="attribution">
-        Challenge by
-        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-          >Frontend Mentor</a
-        >. Coded by
-        <a href="https://www.linkedin.com/in/manoel-lu%C3%ADs-96ba50237/"
-          >Manoel Luis</a
-        >.
-      </div>
-    </footer>
 
     <script src="funçoes.js"></script>
   </body>

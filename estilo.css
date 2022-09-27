@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+}
+
 html,
 body {
     margin: 0;
@@ -10,4 +14,217 @@ body {
     height: 100%;
     width: 100%;
 
+}
+
+.flex_row {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+
+}
+
+.dark_mode {
+    --bg-top-image: 0 0 url(./images/bg-desktop-dark.jpg) no-repeat;
+    --main-bg: hsl(235, 21%, 11%);
+    --todo-bg: hsl(235, 24%, 19%);
+    --todo-shadow: hsl(235, 21%, 11%);
+    --font-color: hsl(234, 39%, 85%);
+    --font-color-hover: #fff;
+}
+
+.light_mode {
+    --bg-top-image: url(./images/bg-desktop-light.jpg);
+    --main-bg: hsl(0, 0%, 98%);
+    --todo-bg: hsl(0, 0%, 98%);
+    --todo-shadow: hsl(235, 19%, 35%);
+    --font-color: hsl(236, 9%, 61%);
+    --font-color-hover: hsl(235, 21%, 11%);
+}
+
+body {
+    background: var(--bg-top-image);
+    background-color: var(--main-bg);
+    background-size: contain;
+    color: var(--font-color);
+}
+
+header {
+    justify-content: space-between;
+}
+
+header,
+main {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #fff;
+    letter-spacing: .5rem;
+}
+
+
+
+.bloco_tema #tema {
+    display: none;
+}
+
+.bloco_tema #tema+label::before {
+    content: '';
+    display: block;
+    background: url(./images/icon-sun.svg);
+    width: 26px;
+    height: 26px;
+
+}
+
+.bloco_tema #tema:checked+label::before {
+    background: url(./images/icon-moon.svg);
+}
+
+.add_nova_tarefa {
+    background: var(--todo-bg);
+    height: 55px;
+    border-radius: 5px;
+    margin: 0 0 15px 0;
+}
+
+.add_nova_tarefa #addTarefa {
+    background: transparent;
+    color: var(--font-color);
+    border: 0;
+    outline: 0;
+    width: 80%;
+    height: 40px;
+}
+
+.add_nova_tarefa span {
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--font-color);
+    display: block;
+    border-radius: 50px;
+}
+
+.conteudo {
+    background: var(--todo-bg);
+    border-radius: 5px;
+    box-shadow: 0 5px 25px -12px var(--todo-shadow);
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    padding: 0;
+    min-height: 65px;
+    border-bottom: 1px solid var(--font-color);
+    position: relative;
+}
+
+ul li input[type='checkbox'] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+}
+
+ul li label {
+    position: relative;
+    cursor: pointer;
+    padding: 0 0 0 35px;
+}
+
+.checkmark {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+}
+
+ul li input[type='checkbox']~.checkmark {
+    border: 1px solid var(--font-color);
+    border-radius: 50px;
+}
+
+ul li input[type='checkbox']~.checkmark:hover {
+    border: 0;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+ul li input[type='checkbox']~.checkmark:hover::before {
+    content: '';
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: var(--todo-bg);
+    display: block;
+}
+
+
+ul li input[type='checkbox']:checked~.checkmark {
+    background: center url(./images/icon-check.svg) no-repeat, linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+ul li input[type='checkbox']:checked~.texto {
+    text-decoration: line-through;
+}
+
+.remove {
+    background: url(./images/icon-cross.svg);
+    display: none;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 16px;
+}
+
+ul li:hover .remove {
+    display: block;
+}
+
+.itens_baixo {
+    justify-content: space-between;
+    height: 65px;
+    font-size: 1rem;
+}
+
+.filtro input[type='radio'] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.filtro label {
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+.filtro label:hover {
+    color: var(--font-color-hover);
+}
+
+.filtro input[type="radio"]:checked~span {
+    color: hsl(221, 62%, 52%);
+}
+
+.limpar {
+    color: var(--font-color);
+    cursor: pointer;
+}
+
+.limpar:hover {
+    color: var(--font-color-hover);
 }
