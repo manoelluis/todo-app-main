@@ -33,7 +33,7 @@ body {
 }
 
 .light_mode {
-    --bg-top-image: url(./images/bg-desktop-light.jpg);
+    --bg-top-image: url(./images/bg-desktop-light.jpg) no-repeat;
     --main-bg: hsl(0, 0%, 98%);
     --todo-bg: hsl(0, 0%, 98%);
     --todo-shadow: hsl(235, 19%, 35%);
@@ -54,7 +54,7 @@ header {
 
 header,
 main {
-    max-width: 550px;
+    max-width: 545px;
     margin: 0 auto;
 }
 
@@ -62,7 +62,7 @@ h1 {
     font-weight: 700;
     font-size: 2.5rem;
     color: #fff;
-    letter-spacing: .5rem;
+    letter-spacing: 1rem;
 }
 
 
@@ -71,12 +71,17 @@ h1 {
     display: none;
 }
 
+.bloco_tema {
+    margin: -10px 0 0;
+}
+
 .bloco_tema #tema+label::before {
     content: '';
     display: block;
     background: url(./images/icon-sun.svg);
     width: 26px;
     height: 26px;
+    cursor: pointer;
 
 }
 
@@ -86,9 +91,11 @@ h1 {
 
 .add_nova_tarefa {
     background: var(--todo-bg);
-    height: 55px;
+    height: 65px;
     border-radius: 5px;
-    margin: 0 0 15px 0;
+    margin: 0 0 24px;
+    padding: 0 26px;
+    position: relative;
 }
 
 .add_nova_tarefa #addTarefa {
@@ -96,8 +103,9 @@ h1 {
     color: var(--font-color);
     border: 0;
     outline: 0;
-    width: 80%;
-    height: 40px;
+    width: 100%;
+    height: 50px;
+    margin: 4px 0 0 47px;
 }
 
 .add_nova_tarefa span {
@@ -105,13 +113,17 @@ h1 {
     height: 25px;
     border: 1px solid var(--font-color);
     display: block;
-    border-radius: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 26px;
+    top: 21px;
+    cursor: pointer;
 }
 
 .conteudo {
     background: var(--todo-bg);
     border-radius: 5px;
-    box-shadow: 0 5px 25px -12px var(--todo-shadow);
+    box-shadow: 0 42px 30px -9px var(--todo-shadow);
 }
 
 ul {
@@ -138,13 +150,18 @@ ul li input[type='checkbox'] {
 ul li label {
     position: relative;
     cursor: pointer;
-    padding: 0 0 0 35px;
+    padding: 2px 0 0 48px;
+    font-size: 1.1rem;
+}
+
+ul li.hidden {
+    display: none;
 }
 
 .checkmark {
     position: absolute;
     top: -5px;
-    left: 0;
+    left: 15px;
     height: 25px;
     width: 25px;
 }
@@ -185,8 +202,8 @@ ul li input[type='checkbox']:checked~.texto {
     height: 18px;
     cursor: pointer;
     position: absolute;
-    right: 20px;
-    top: 16px;
+    right: 25px;
+    top: 25px;
 }
 
 ul li:hover .remove {
@@ -194,9 +211,18 @@ ul li:hover .remove {
 }
 
 .itens_baixo {
-    justify-content: space-between;
-    height: 65px;
-    font-size: 1rem;
+    padding: 20px 20px 20px 27px;
+    letter-spacing: .5px;
+    font-size: .8rem;
+    align-items: baseline;
+    border-radius: 5px;
+    background: var(--todo-bg);
+}
+
+
+
+.filtro {
+    margin-right: 80px;
 }
 
 .filtro input[type='radio'] {
@@ -209,7 +235,7 @@ ul li:hover .remove {
 
 .filtro label {
     cursor: pointer;
-    padding: 0 4px;
+    padding: 0 10px;
 }
 
 .filtro label:hover {
@@ -227,4 +253,26 @@ ul li:hover .remove {
 
 .limpar:hover {
     color: var(--font-color-hover);
+}
+
+@media (max-width: 500px) {
+    .tarefas_restantes {
+        display: none;
+    }
+
+    main,
+    header {
+        width: 80%;
+    }
+
+    .itens_baixo {
+        justify-content: center;
+        contain: content;
+        font-size: .6rem;
+    }
+
+    .filtro {
+        width: 50%;
+    }
+
 }
